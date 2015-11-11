@@ -20,11 +20,11 @@ function getJGID() {
 	    return null;
 	}
 
-	if(localStorage.getItem("JGID") === null){
+	if(localStorage.getItem("JGID") !== null){
 		return localStorage.getItem("JGID");
 	}
 
-	var numArray = createRandomArray(5,1,9);
+	var numArray = createRandomArray(8,1,9);
 	var id = hashids.encode(numArray);
 
     localStorage.setItem("JGID", id);
