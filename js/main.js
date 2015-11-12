@@ -65,6 +65,6 @@ analytics.trackForm(form, 'test_form', {
 
 analytics.ready(function(){
 	analytics.user().anonymousId(JGID);
+	analytics.debug();
 });
 
-analytics.debug();
