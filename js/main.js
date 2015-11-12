@@ -56,12 +56,17 @@ analytics.page({
 	"server": "1.1.1.1"
 });
 
-var form = document.getElementById('testform');
+$("#Identify2").click(function() {
+	var form = document.getElementById('testform'),
+		textboxval = $("#exampleInputEmail3").val();
+		checkboxval = $('#checkbox2')[0].checked;
 
-analytics.trackForm(form, 'test_form', {
-  textbox: $("#exampleInputEmail3").val(),
-  checkbox: $("#checkbox2").prop("checked")
+	analytics.trackForm(form, 'test_form', {
+	  textbox: textboxval,
+	  checkbox: checkboxval
+	});
 });
+
 
 analytics.ready(function(){
 	analytics.user().anonymousId(JGID);
