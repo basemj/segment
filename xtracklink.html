@@ -62,7 +62,15 @@
 				  <h2>Track Link</h2>
 				</div>
 
-				<p>This <a href="/segment/" onclick="analytics.trackLink(this, 'Clicked this amazing Link', {area: 'about.justgiving.com'});">link</a> will pass some analytics data</p>
+				<p>This <a href="/segment/" id="thislink">link</a> will pass some analytics data</p>
+
+				<script type="text/javascript">
+					var thislink = document.getElementById('thislink');
+
+					analytics.trackLink(thislink, 'Clicked this amazing Link', {
+						area: 'about.justgiving.com'
+					});
+				</script>
 		    </div>
 		  </div>
 		</div>
