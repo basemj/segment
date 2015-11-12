@@ -63,6 +63,8 @@ analytics.trackForm(form, 'test_form', {
   checkbox: $("#checkbox2").prop("checked")
 });
 
-analytics.user().anonymousId(JGID);
+analytics.ready(function(){
+	analytics.user().anonymousId(JGID);
+});
 
 analytics.debug();
