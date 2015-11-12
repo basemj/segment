@@ -31,10 +31,38 @@ function getJGID() {
 	return id;
 }
 
+var JGID = getJGID();
+
 $("#Identify").click(function() {
-	var JGID = getJGID();
 	analytics.identify(JGID, {
 	  email: $("#exampleInputEmail1").val()
 	});
 	console.log(JGID);
 });
+
+$("#exampleInputEmail2").blur(function() {
+	analytics.track('Blur email field', {
+	  typed: $(this).val()
+	});
+});
+
+$("#checkbox").click(function() {
+	analytics.track('Magic checkbox', {
+	  typed: $(this).prop("checked")
+	});
+});
+
+analytics.page({
+	"server": "1.1.1.1"
+});
+
+var form = document.getElementById('testform');
+
+analytics.trackForm(form, 'test_form', {
+  textbox: $("#exampleInputEmail3").val(),
+  checkbox: $("#checkbox2").prop("checked")
+});
+
+analytics.user().anonymousId(JGID);
+
+analytics.debug();
