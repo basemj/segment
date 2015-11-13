@@ -40,7 +40,7 @@ $("#Identify").click(function() {
 	console.log(JGID);
 });
 
-$("#exampleInputEmail2").blur(function() {
+$("#exampleInputEmail3").blur(function() {
 	analytics.track('Blur email field', {
 	  typed: $(this).val()
 	});
